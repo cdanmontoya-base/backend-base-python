@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "backend-base-python"
+version = "0.1.0"
+description = "A base project that works as a template for microservices and backend applications."
+authors = ["cdanmontoya <carlos.danmontoya@gmail.com>"]
+license = "Apache-2.0 license"
+readme = "README.md"
+packages = [{include = "backend_base_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.95.1"
+injector = "^0.20.1"
+uvicorn = "^0.22.0"
+sqlalchemy = "^2.0.12"
+httpx = "^0.24.0"
+returns = "^0.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+coverage = "^7.2.5"
+factory-boy = "^3.2.1"
+Faker = "^18.6.1"
+mypy = "^1.2.0"
+pylint = "^2.17.3"
+pytest = "^7.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
