@@ -3,18 +3,21 @@ name = "backend-base-python"
 version = "0.1.0"
 description = "A base project that works as a template for microservices and backend applications."
 authors = ["cdanmontoya <carlos.danmontoya@gmail.com>"]
-license = "Apache-2.0 license"
+license = "Apache-2.0"
 readme = "README.md"
+repository = "https://github.com/cdanmontoya-base/backend-base-python"
 packages = [{include = "backend_base_python"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.95.1"
-injector = "^0.20.1"
-uvicorn = "^0.22.0"
-sqlalchemy = "^2.0.12"
+fastapi = "^0.100.0"
 httpx = "^0.24.0"
-returns = "^0.20.0"
+injector = "^0.20.1"
+returns = {extras = ["compatible-mypy"], version = "^0.21.0"}
+sqlalchemy = "^2.0.12"
+uvicorn = "^0.23.0"
+dependency-injector = "^4.41.0"
+anyio = "^3.7.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -25,6 +28,9 @@ Faker = "^18.6.1"
 mypy = "^1.2.0"
 pylint = "^2.17.3"
 pytest = "^7.3.1"
+
+[tool.mypy]
+plugins = ["returns.contrib.mypy.returns_plugin"]
 
 
 [build-system]
